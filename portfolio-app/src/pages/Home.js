@@ -738,13 +738,11 @@ const Home = () => {
   const projectsRef = useRef(null);
   const timelineRef = useRef(null);
   const certsRef = useRef(null);
-  const experienceRef = useRef(null);
   
   const skillsInView = useInView(skillsRef, { once: true, margin: "-100px" });
   const projectsInView = useInView(projectsRef, { once: true, margin: "-100px" });
   const timelineInView = useInView(timelineRef, { once: true, margin: "-100px" });
   const certsInView = useInView(certsRef, { once: true, margin: "-100px" });
-  const experienceInView = useInView(timelineRef, { once: true, margin: "-100px" });
 
   const skills = [
     {
