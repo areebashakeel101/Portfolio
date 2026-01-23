@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaBrain, FaRobot, FaCode, FaMobile, FaServer, FaLayerGroup } from 'react-icons/fa';
+import { FaGithub, FaBrain, FaRobot, FaCode, FaMobile, FaLayerGroup } from 'react-icons/fa';
 
 const gradientShift = keyframes`
   0%, 100% { background-position: 0% 50%; }

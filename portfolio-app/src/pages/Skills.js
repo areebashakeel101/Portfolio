@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaCode, FaServer, FaDatabase, FaTools, FaBrain, FaMobile, FaLayerGroup } from 'react-icons/fa';
+import { FaCode, FaServer, FaDatabase, FaTools, FaBrain, FaLayerGroup } from 'react-icons/fa';
 
 const gradientShift = keyframes`
   0%, 100% { background-position: 0% 50%; }
@@ -13,10 +13,7 @@ const float = keyframes`
   50% { transform: translateY(-8px); }
 `;
 
-const pulse = keyframes`
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(0.98); }
-`;
+
 
 const SkillsContainer = styled.div`
   min-height: 100vh;
