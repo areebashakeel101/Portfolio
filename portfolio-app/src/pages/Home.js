@@ -51,7 +51,7 @@ const HeroGlassCard = styled(motion.div)`
   border-radius: 32px;
   padding: 4rem;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1300px;
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 4rem;
@@ -272,8 +272,18 @@ const Section = styled.section`
 `;
 
 const SectionWrapper = styled.div`
-  max-width: 1200px;
+  width: 100%;
+  max-width: min(1200px, calc(100% - 2rem));
   margin: 0 auto;
+  padding: 0 1rem;
+  
+  @media (min-width: 640px) {
+    padding: 0 1.5rem;
+  }
+  
+  @media (min-width: 1024px) {
+    padding: 0 2rem;
+  }
 `;
 
 const SectionHeader = styled(motion.div)`
@@ -728,11 +738,13 @@ const Home = () => {
   const projectsRef = useRef(null);
   const timelineRef = useRef(null);
   const certsRef = useRef(null);
+  const experienceRef = useRef(null);
   
   const skillsInView = useInView(skillsRef, { once: true, margin: "-100px" });
   const projectsInView = useInView(projectsRef, { once: true, margin: "-100px" });
   const timelineInView = useInView(timelineRef, { once: true, margin: "-100px" });
   const certsInView = useInView(certsRef, { once: true, margin: "-100px" });
+  const experienceInView = useInView(timelineRef, { once: true, margin: "-100px" });
 
   const skills = [
     {
@@ -748,53 +760,56 @@ const Home = () => {
     {
       title: "AI & ML",
       icon: <FaBrain />,
-      skills: ["RAG", "LLMs", "Gemini API", "LSTM", "TensorFlow", "Computer Vision"]
+      skills: ["RAG", "LLMs", "LSTM", "TensorFlow", "CNNs", "GANs" ]
     },
     {
       title: "Databases & Tools",
       icon: <FaDatabase />,
-      skills: ["MongoDB", "Firebase", "ChromaDB", "Docker", "Git", "Vercel"]
+      skills: ["MongoDB", "Firebase", "ChromaDB","FAISS", "Docker", "Git", "Vercel"]
     }
   ];
 
   const projects = [
     {
       title: "ParkinSense",
-      subtitle: "Smart Tracking for Parkinson's (FYP)",
+      subtitle: "ParkinSense — Smart Tracking for Life with Parkinson's (FYP)",
       description: [
-        "Multi-platform monitoring system with AI-powered health analysis",
-        "One-tap SOS alerts & real-time GPS location sharing",
-        "Interactive dashboards with JWT-based security"
+        "Multi-platform monitoring (patient, caregiver, doctor, admin) across mobile & web.",
+        "AI-driven symptom analysis and progression tracking with doctor-reviewed personalized care plans.",
+        "One-tap SOS with real-time notifications, live GPS sharing, and emergency calling.",
+        "Secure, scalable backend with JWT auth and role-based access; clinician dashboards."
       ],
-      tech: ["Node.js", "FastAPI", "Gemini API", "React Native", "Firebase"]
+      tech: ["Node.js", "FastAPI", "Gemini API", "LSTM", "RAG", "React.js", "MongoDB", "ChromaDB", "Tailwind CSS", "React Native", "Firebase"]
     },
     {
       title: "TravelGenie",
       subtitle: "AI-driven Travel Assistant",
       description: [
-        "User management with JWT authentication",
-        "Web scraping for real-time travel info",
-        "RAG + embeddings for context-aware suggestions"
+        "JWT-based user management and secure authentication.",
+        "Web scraping to gather real-time travel data and destination insights.",
+        "RAG + embeddings + LLM engine for context-aware travel recommendations."
       ],
-      tech: ["LangGraph", "FastAPI", "MERN", "Next.js"]
+      tech: ["LangGraph", "FastAPI", "MERN", "Web Scraping", "Gemini", "FAISS", "Next.js", "Node.js"]
     },
     {
       title: "DeepForge",
-      subtitle: "DL Models Training Platform",
+      subtitle: "Forge & Train Deep Learning Models",
       description: [
-        "Transfer learning with AlexNet, VGGNet, ResNet",
-        "YOLO/Faster R-CNN for object detection",
-        "GANs for design generation"
+        "Transfer learning (AlexNet, VGG, ResNet) and fine-tuning for image classification.",
+        "Applied YOLO / Faster R-CNN for object detection and GANs for image generation.",
+        "LSTM-based sequence models and end-to-end pipelines with augmentation for varied datasets."
       ],
-      tech: ["TensorFlow", "Keras", "YOLO", "Computer Vision"]
+      tech: ["Transfer Learning", "Object Detection", "GANs", "LSTM", "TensorFlow", "Keras"]
     }
   ];
 
   const certifications = [
-    { name: "Python for Data Science", provider: "Cognitive Class-IBM" },
-    { name: "Fundamentals of AI Agent using RAG", provider: "Coursera" },
-    { name: "Generative AI for Everyone", provider: "Coursera" },
-    { name: "Deep Learning with Keras and TensorFlow", provider: "Coursera" }
+    { name: "Python for Data Science", provider: "Cognitive Class-IBM", file: require('../certificates/IBM PY0101EN Certificate _ Cognitive Class.pdf') },
+    { name: "Fundamentals of AI Agent using RAG and LangChain", provider: "Coursera", file: require('../certificates/coursera-certificatefor-ragandlangchain.pdf') },
+    { name: "Generative AI for Everyone", provider: "Coursera", file: require('../certificates/Coursere-generativeAI.pdf') },
+    { name: "Deep Learning with Keras and TensorFlow", provider: "Coursera", file: require('../certificates/coursera-certificatefortensorflow.pdf') },
+    { name: "Introduction to Deep Learning and Neural Networks with Keras", provider: "Coursera", file: require('../certificates/Coursera deep learning.pdf') },
+    { name: "Machine Learning", provider: "Coursera", file: require('../certificates/Coursera-machineLearning.pdf') }
   ];
 
   return (
@@ -1057,11 +1072,18 @@ const Home = () => {
                 animate={certsInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
               >
-                <CertIcon><FaCertificate /></CertIcon>
-                <CertInfo>
-                  <CertName>{cert.name}</CertName>
-                  <CertProvider>{cert.provider}</CertProvider>
-                </CertInfo>
+                    <CertIcon><FaCertificate /></CertIcon>
+                    <CertInfo>
+                      <CertName>{cert.name}</CertName>
+                      <CertProvider>{cert.provider}</CertProvider>
+                      {cert.file && (
+                        <div style={{ marginTop: '0.5rem' }}>
+                          <a href={cert.file} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-color)', fontWeight: 600, textDecoration: 'none' }}>
+                            View Certificate
+                          </a>
+                        </div>
+                      )}
+                    </CertInfo>
               </CertCard>
             ))}
           </CertGrid>

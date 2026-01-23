@@ -9,7 +9,7 @@ import ragLangchainCert from '../certificates/coursera-certificatefor-ragandlang
 import generativeAICert from '../certificates/Coursere-generativeAI.pdf';
 import kerasDeepLearningCert from '../certificates/Coursera deep learning.pdf';
 import tensorflowCert from '../certificates/coursera-certificatefortensorflow.pdf';
-import experienceCert from '../experience/certificate-experience.pdf';
+import mlCert from '../certificates/Coursera-machineLearning.pdf';
 
 const gradientShift = keyframes`
   0%, 100% { background-position: 0% 50%; }
@@ -44,10 +44,16 @@ const CertContainer = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-  max-width: 1100px;
+  width: 100%;
+  max-width: 1300px;
   margin: 0 auto;
+  padding: 0 1.5rem;
   position: relative;
   z-index: 1;
+  
+  @media (min-width: 1024px) {
+    padding: 0 2rem;
+  }
 `;
 
 const Header = styled(motion.div)`
@@ -294,106 +300,7 @@ const CategoryTitle = styled.h2`
   }
 `;
 
-const ExperienceSection = styled(motion.div)`
-  margin-top: 4rem;
-`;
 
-const ExperienceCard = styled(motion.a)`
-  background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(245, 158, 11, 0.05));
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(251, 191, 36, 0.2);
-  border-radius: 24px;
-  padding: 2.5rem;
-  display: block;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  cursor: pointer;
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #fbbf24, #f59e0b);
-  }
-  
-  &:hover {
-    transform: translateY(-8px);
-    border-color: #fbbf24;
-    box-shadow: 0 25px 50px rgba(251, 191, 36, 0.15);
-  }
-`;
-
-const ExperienceHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 2rem;
-  
-  @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 1rem;
-  }
-`;
-
-const ExperienceInfo = styled.div`
-  flex: 1;
-`;
-
-const ExperienceTitle = styled.h3`
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--text-color);
-  margin-bottom: 0.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-`;
-
-const ExperienceCompany = styled.p`
-  color: #fbbf24;
-  font-size: 1.1rem;
-  font-family: 'Fira Code', monospace;
-  margin-bottom: 1rem;
-`;
-
-const ExperienceDate = styled.span`
-  background: rgba(251, 191, 36, 0.15);
-  color: #fbbf24;
-  padding: 0.5rem 1rem;
-  border-radius: 50px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  font-family: 'Fira Code', monospace;
-  border: 1px solid rgba(251, 191, 36, 0.3);
-  white-space: nowrap;
-`;
-
-const ExperienceDescription = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin-top: 1.5rem;
-  
-  li {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    margin-bottom: 0.75rem;
-    padding-left: 1.5rem;
-    position: relative;
-    line-height: 1.7;
-    
-    &::before {
-      content: '▹';
-      position: absolute;
-      left: 0;
-      color: #fbbf24;
-    }
-  }
-`;
 
 const Certifications = () => {
   const certifications = [
@@ -436,11 +343,21 @@ const Certifications = () => {
     { 
       name: "Deep Learning with Keras and TensorFlow", 
       provider: "Coursera", 
-      date: "Jul 2025",
+      date: "Jan 2026",
       icon: <FaBrain />,
       color: "#fbbf24",
       gradient: "linear-gradient(90deg, #fbbf24, #f59e0b)",
       pdfLink: tensorflowCert
+    }
+    ,
+    { 
+      name: "Machine Learning", 
+      provider: "Coursera", 
+      date: "Mar 2025",
+      icon: <FaBrain />,
+      color: "#f59e0b",
+      gradient: "linear-gradient(90deg, #f59e0b, #f97316)",
+      pdfLink: mlCert
     }
   ];
 
@@ -452,7 +369,7 @@ const Certifications = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <Title>Certifications & Experience</Title>
+          <Title>Certifications</Title>
           <Subtitle>
             Continuous learning and professional development in AI, Machine Learning, and modern technologies
           </Subtitle>
@@ -472,7 +389,7 @@ const Certifications = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <StatNumber>3</StatNumber>
+            <StatNumber>4</StatNumber>
             <StatLabel>AI/ML Specializations</StatLabel>
           </StatCard>
           <StatCard
@@ -485,38 +402,6 @@ const Certifications = () => {
           </StatCard>
         </StatsGrid>
 
-        <ExperienceSection
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
-          <CategoryTitle>
-            <FaAward /> Work Experience
-          </CategoryTitle>
-          
-          <ExperienceCard 
-            href={experienceCert} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            whileHover={{ y: -8 }}
-          >
-            <ExperienceHeader>
-              <ExperienceInfo>
-                <ExperienceTitle>
-                  Backend Intern
-                  <ViewBadge><FaExternalLinkAlt /> View Certificate</ViewBadge>
-                </ExperienceTitle>
-                <ExperienceCompany>TMRC, Islamabad</ExperienceCompany>
-              </ExperienceInfo>
-              <ExperienceDate>July 2025 – August 2025</ExperienceDate>
-            </ExperienceHeader>
-            <ExperienceDescription>
-              <li>Built a scalable Django REST backend with JWT authentication, RBAC, custom permissions, and secure token-based workflows</li>
-              <li>Designed optimized database schemas and modular APIs using viewsets, serializers, middleware, and ORM query optimization</li>
-              <li>Developed a full-stack Resume Maker platform by integrating Django REST APIs with ReactJS</li>
-            </ExperienceDescription>
-          </ExperienceCard>
-        </ExperienceSection>
 
         <CategorySection
           initial={{ opacity: 0 }}

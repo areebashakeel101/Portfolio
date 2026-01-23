@@ -11,6 +11,7 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import Skills from './pages/Skills';
 import Certifications from './pages/Certifications';
+import Experience from './pages/Experience';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
                 <Route path="/about" element={<About />} />
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/skills" element={<Skills />} />
+                <Route path="/experience" element={<Experience />} />
                 <Route path="/certifications" element={<Certifications />} />
               </Routes>
             </AnimatePresence>

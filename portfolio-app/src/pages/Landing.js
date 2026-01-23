@@ -50,7 +50,7 @@ print(build_future())`,
       className="min-h-screen flex flex-col justify-center items-center px-4 pt-20 pb-10"
     >
       {/* Hero Section with Profile */}
-      <div className="w-full max-w-6xl mb-12">
+      <div className="w-full max-w-[1300px] mb-12">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Text Content */}
           <div className="flex-1 text-center lg:text-left">

@@ -57,6 +57,26 @@ const GlobalStyles = createGlobalStyle`
     padding: 0 2rem;
   }
 
+  /* Responsive container utilities */
+  .container-responsive {
+    width: 100%;
+    max-width: min(1200px, calc(100% - 2rem));
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container-responsive {
+      padding: 0 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-responsive {
+      padding: 0 2rem;
+    }
+  }
+
   /* Glassmorphism utilities */
   .glass {
     background: rgba(30, 41, 59, 0.7);

@@ -27,8 +27,16 @@ const SkillsContainer = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1300px;
   margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+
+  @media (min-width: 1024px) {
+    padding: 0 2rem;
+  }
 `;
 
 const Header = styled(motion.div)`

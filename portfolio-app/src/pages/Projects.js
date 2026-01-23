@@ -48,10 +48,16 @@ const ProjectsContainer = styled.div`
 `;
 
 const ContentWrapper = styled.div`
+  width: 100%;
   max-width: 1300px;
   margin: 0 auto;
+  padding: 0 1.5rem;
   position: relative;
   z-index: 1;
+  
+  @media (min-width: 1024px) {
+    padding: 0 2rem;
+  }
 `;
 
 const Header = styled(motion.div)`
@@ -327,41 +333,75 @@ const Projects = () => {
   
   const projects = [
     {
-      title: "ParkinSense",
-      subtitle: "Smart Tracking for Life with Parkinson's",
+      title: "ParkinSense - Doctor & Admin Web App",
+      subtitle: "Real-time Patient Monitoring & Management",
       badge: "Final Year Project",
-      category: "ai",
+      category: "web",
       featured: true,
       icon: <FaBrain />,
       iconColor: "#f472b6",
       gradient: "linear-gradient(90deg, #f472b6, #ec4899)",
       description: [
-        "Multi-platform monitoring system (Patient, Caregiver, Doctor, Admin apps)",
-        "AI-powered health analysis detecting patterns & tracking disease progression",
-        "One-tap SOS alerts & real-time GPS location sharing for emergencies",
-        "Interactive dashboards for doctors/caregivers with JWT-based security"
+        "Real-time patient health dashboards with interactive charts (heart rate, tremors, gait monitoring)",
+        "AI-powered medication management with override capabilities for treatment adjustments",
+        "Emergency alert system for abnormal conditions with instant caregiver notifications",
+        "Reports & analytics with PDF/Excel export for medical documentation"
       ],
-      tech: ["Node.js", "FastAPI", "Gemini API", "LSTM", "RAG", "React Native", "Firebase"],
-      github: "https://github.com/syedmozamilshah",
-      live: "#"
+      tech: ["React.js", "Node.js", "FastAPI", "MongoDB", "JWT", "Chart.js", "Tailwind CSS"],
+      github: "https://github.com/areebashakeel101"
+    },
+    {
+      title: "ParkinSense - Patient Mobile App",
+      subtitle: "Health Tracking & Emergency Assistance",
+      badge: "Final Year Project",
+      category: "mobile",
+      featured: true,
+      icon: <FaMobile />,
+      iconColor: "#818cf8",
+      gradient: "linear-gradient(90deg, #818cf8, #6366f1)",
+      description: [
+        "Integrated mobile sensors for real-time health data collection and preprocessing",
+        "AI-generated personalized medication, diet & exercise plans with smart reminders",
+        "One-tap SOS emergency system with auto-call & real-time GPS location sharing",
+        "Monthly health reports & medication adherence tracking with PDF download"
+      ],
+      tech: ["React Native", "Firebase", "AI/ML", "GPS Integration"],
+      github: "https://github.com/areebashakeel101"
+    },
+    {
+      title: "ParkinSense - Caregiver Mobile App",
+      subtitle: "Patient Care & Emergency Response",
+      badge: "Final Year Project",
+      category: "mobile",
+      featured: true,
+      icon: <FaMobile />,
+      iconColor: "#2dd4bf",
+      gradient: "linear-gradient(90deg, #2dd4bf, #22d3ee)",
+      description: [
+        "Real-time patient health monitoring with alerts for missed medications & therapy tasks",
+        "Emergency response system with live GPS tracking & fall detection notifications",
+        "Manage patient diet, exercise & medication plans with adherence tracking",
+        "Health status logging & communication system for doctor updates"
+      ],
+      tech: ["React Native", "Firebase", "Real-time Database", "GPS Tracking", "Push Notifications"],
+      github: "https://github.com/areebashakeel101"
     },
     {
       title: "TravelGenie",
       subtitle: "AI-driven Travel Assistant",
-      badge: "AI Agent",
-      category: "ai",
+      badge: "Full Stack Web App",
+      category: "web",
       featured: true,
       icon: <FaRobot />,
-      iconColor: "#2dd4bf",
-      gradient: "linear-gradient(90deg, #2dd4bf, #22d3ee)",
+      iconColor: "#fbbf24",
+      gradient: "linear-gradient(90deg, #fbbf24, #f59e0b)",
       description: [
         "User management & secure authentication module using JWT",
         "Web scraping for real-time travel info, destination data & culture",
         "AI response engine using RAG + embeddings + LLM API for context-aware suggestions"
       ],
-      tech: ["LangGraph", "FastAPI", "MERN", "Web Scraping", "Gemini", "Next.js"],
-      github: "https://github.com/syedmozamilshah",
-      live: "#"
+      tech: ["LangGraph", "FastAPI", "MERN", "Web Scraping", "Gemini", "FAISS", "Next.js"],
+      github: "https://github.com/areebashakeel101"
     },
     {
       title: "DeepForge",
@@ -369,70 +409,15 @@ const Projects = () => {
       badge: "Deep Learning",
       category: "ai",
       icon: <FaBrain />,
-      iconColor: "#fbbf24",
-      gradient: "linear-gradient(90deg, #fbbf24, #f59e0b)",
+      iconColor: "#34d399",
+      gradient: "linear-gradient(90deg, #34d399, #10b981)",
       description: [
         "ANN on IRIS dataset for multi-class classification",
         "AlexNet, VGGNet, ResNet transfer learning for plant leaf classification",
         "YOLO/Faster R-CNN for pet detection, GANs for design, LSTM for action recognition"
       ],
-      tech: ["Deep Learning", "TensorFlow", "Keras", "YOLO", "GANs", "Computer Vision"],
-      github: "https://github.com/syedmozamilshah",
-      live: "#"
-    },
-    {
-      title: "Resume Builder Platform",
-      subtitle: "Full-Stack Resume Creator",
-      badge: "Web App",
-      category: "web",
-      icon: <FaServer />,
-      iconColor: "#818cf8",
-      gradient: "linear-gradient(90deg, #818cf8, #6366f1)",
-      description: [
-        "Scalable Django REST backend with JWT authentication & RBAC",
-        "Custom permissions and secure token-based workflows",
-        "Optimized database schemas with modular APIs & ORM optimization",
-        "Full-stack integration with ReactJS frontend"
-      ],
-      tech: ["Django", "REST API", "ReactJS", "PostgreSQL", "JWT", "Tailwind CSS"],
-      github: "https://github.com/syedmozamilshah",
-      live: "#"
-    },
-    {
-      title: "AI Portfolio",
-      subtitle: "Interactive Developer Portfolio",
-      badge: "Frontend",
-      category: "web",
-      icon: <FaCode />,
-      iconColor: "#34d399",
-      gradient: "linear-gradient(90deg, #34d399, #10b981)",
-      description: [
-        "Modern React portfolio with Framer Motion animations",
-        "Terminal-style code blocks and interactive UI elements",
-        "Responsive design with glassmorphism effects",
-        "Dynamic project filtering and smooth page transitions"
-      ],
-      tech: ["React", "Framer Motion", "Styled Components", "Tailwind CSS"],
-      github: "https://github.com/syedmozamilshah",
-      live: "#"
-    },
-    {
-      title: "Multi-Agent System",
-      subtitle: "Autonomous AI Agent Orchestration",
-      badge: "AI Research",
-      category: "ai",
-      icon: <FaRobot />,
-      iconColor: "#ec4899",
-      gradient: "linear-gradient(90deg, #ec4899, #db2777)",
-      description: [
-        "LangGraph-based multi-agent architecture for complex workflows",
-        "Tool-use agents with memory and context management",
-        "RAG integration for knowledge-enhanced responses",
-        "Scalable agent communication and task delegation"
-      ],
-      tech: ["LangGraph", "LangChain", "OpenAI", "ChromaDB", "Python"],
-      github: "https://github.com/syedmozamilshah",
-      live: "#"
+      tech: ["TensorFlow", "Keras", "YOLO", "GANs", "LSTM", "Transfer Learning"],
+      github: "https://github.com/areebashakeel101"
     }
   ];
 
@@ -540,16 +525,7 @@ const Projects = () => {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <FaGithub /> Code
-                    </LinkButton>
-                    <LinkButton 
-                      href={project.live} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <FaExternalLinkAlt /> Live Demo
+                      <FaGithub /> View on GitHub
                     </LinkButton>
                   </Links>
                 </ProjectContent>
