@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { FaBriefcase, FaCertificate, FaFileAlt } from 'react-icons/fa';
+import { FaBriefcase, FaFileAlt } from 'react-icons/fa';
 
 const ExperienceSection = styled.section`
   min-height: 100vh;
@@ -181,115 +181,9 @@ const CertificateButton = styled.a`
   }
 `;
 
-const CertificationsGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-  
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const CertificationCard = styled(motion.div)`
-  background: rgba(30, 41, 59, 0.5);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  padding: 2rem;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    border-color: rgba(45, 212, 191, 0.3);
-    box-shadow: 0 15px 30px rgba(45, 212, 191, 0.08);
-    transform: translateY(-3px);
-  }
-`;
-
-const CertificationHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-`;
-
-const CertificationTitle = styled.h4`
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--text-color);
-  margin-bottom: 0.25rem;
-`;
-
-const CertificationProvider = styled.p`
-  color: #2dd4bf;
-  font-size: 0.95rem;
-  font-weight: 600;
-`;
-
-const CertificationDate = styled.span`
-  background: rgba(45, 212, 191, 0.15);
-  color: #2dd4bf;
-  padding: 0.4rem 0.8rem;
-  border-radius: 50px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  font-family: 'Fira Code', monospace;
-  border: 1px solid rgba(45, 212, 191, 0.3);
-`;
-
-const SkillTags = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.75rem;
-`;
-
-const SkillTag = styled.span`
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--text-secondary);
-  padding: 0.4rem 0.75rem;
-  border-radius: 6px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-`;
 
 const Experience = () => {
-  const certifications = [
-    {
-      title: "Introduction to Deep Learning and Neural Networks with Keras",
-      provider: "Coursera",
-      date: "Jan 2026",
-      skills: ["Deep Learning", "Neural Networks", "Keras", "Artificial Intelligence (AI)", "Model Training & Evaluation"]
-    },
-    {
-      title: "Fundamentals of AI Agent using RAG and LangChain",
-      provider: "Coursera",
-      date: "Jul 2025",
-      skills: ["Retrieval-Augmented Generation (RAG)", "LangChain", "AI Agents", "Large Language Models (LLMs)", "Vector Databases"]
-    },
-    {
-      title: "Generative AI for Everyone",
-      provider: "Coursera",
-      date: "Jul 2025",
-      skills: ["Generative AI", "Large Language Models (LLMs)", "Prompt Engineering", "AI Applications"]
-    },
-    {
-      title: "Deep Learning with Keras and TensorFlow",
-      provider: "Coursera",
-      date: "Jul 2025",
-      skills: ["TensorFlow", "Keras", "Deep Learning", "Model Fine-Tuning", "Neural Network Architecture"]
-    },
-    {
-      title: "Python for Data Science",
-      provider: "Cognitive Class-IBM",
-      date: "Aug 2024",
-      skills: ["Functions, Classes and Objects", "Exception Handling", "File Handling", "Pandas", "Numpy"]
-    }
-  ];
+  
 
   return (
     <ExperienceSection>
