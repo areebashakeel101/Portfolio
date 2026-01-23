@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
-import styled, { keyframes, css } from 'styled-components';
+import React, {useRef } from 'react';
+import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaCode, FaRocket, FaBrain, FaGraduationCap, FaBriefcase, FaCertificate, FaArrowRight, FaServer, FaDatabase, FaTools, FaMobile } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaCode, FaRocket, FaBrain, FaGraduationCap, FaBriefcase, FaCertificate, FaArrowRight, FaServer, FaDatabase } from 'react-icons/fa';
 
 // Animations
 const float = keyframes`
