@@ -332,7 +332,7 @@ const Skills = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <Title>Technical Arsenal</Title>
+          <Title>Technical Skills</Title>
           <Subtitle>
             My weapons of choice for building innovative digital solutions
           </Subtitle>

@@ -554,7 +554,7 @@ const About = () => {
 
             <SocialLinks>
               <SocialLink 
-                href="https://linkedin.com/in/areeba-shakeel" 
+                href="https://linkedin.com/in/beera" 
                 target="_blank"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
@@ -562,7 +562,7 @@ const About = () => {
                 <FaLinkedin />
               </SocialLink>
               <SocialLink 
-                href="https://github.com/areeba-shakeel" 
+                href="https://github.com/areebashakeel101" 
                 target="_blank"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}

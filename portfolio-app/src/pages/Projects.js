@@ -348,7 +348,7 @@ const Projects = () => {
         "Reports & analytics with PDF/Excel export for medical documentation"
       ],
       tech: ["React.js", "Node.js", "FastAPI", "MongoDB", "JWT", "Chart.js", "Tailwind CSS"],
-      github: "https://github.com/areebashakeel101"
+      github: "https://github.com/areebashakeel101/Parkinsense-FYP"
     },
     {
       title: "ParkinSense - Patient Mobile App",
@@ -366,7 +366,7 @@ const Projects = () => {
         "Monthly health reports & medication adherence tracking with PDF download"
       ],
       tech: ["React Native", "Firebase", "AI/ML", "GPS Integration"],
-      github: "https://github.com/areebashakeel101"
+      github: "https://github.com/areebashakeel101/Parkinsense-FYP"
     },
     {
       title: "ParkinSense - Caregiver Mobile App",
@@ -384,7 +384,7 @@ const Projects = () => {
         "Health status logging & communication system for doctor updates"
       ],
       tech: ["React Native", "Firebase", "Real-time Database", "GPS Tracking", "Push Notifications"],
-      github: "https://github.com/areebashakeel101"
+      github: "https://github.com/areebashakeel101/Parkinsense-FYP"
     },
     {
       title: "TravelGenie",
@@ -401,7 +401,7 @@ const Projects = () => {
         "AI response engine using RAG + embeddings + LLM API for context-aware suggestions"
       ],
       tech: ["LangGraph", "FastAPI", "MERN", "Web Scraping", "Gemini", "FAISS", "Next.js"],
-      github: "https://github.com/areebashakeel101"
+      github: "https://github.com/areebashakeel101/TravelGenie"
     },
     {
       title: "DeepForge",
@@ -417,7 +417,7 @@ const Projects = () => {
         "YOLO/Faster R-CNN for pet detection, GANs for design, LSTM for action recognition"
       ],
       tech: ["TensorFlow", "Keras", "YOLO", "GANs", "LSTM", "Transfer Learning"],
-      github: "https://github.com/areebashakeel101"
+      github: "https://github.com/areebashakeel101/DeepForge"
     }
   ];
 
