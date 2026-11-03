@@ -873,7 +873,7 @@ const Home = () => {
               transition={{ duration: 0.6, delay: 0.7 }}
             >
               <SocialLink 
-                href="https://github.com/areebashakeel" 
+                href="https://github.com/areebashakeel101" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
@@ -882,7 +882,7 @@ const Home = () => {
                 <FaGithub />
               </SocialLink>
               <SocialLink 
-                href="https://linkedin.com/in/areebashakeel" 
+                href="https://linkedin.com/in/beera" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
