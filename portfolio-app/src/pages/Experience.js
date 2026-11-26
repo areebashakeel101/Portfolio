@@ -206,6 +206,43 @@ const Experience = () => {
         <ExperienceCard
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          <ExperienceHeader>
+            <ExperienceInfo>
+              <ExperienceTitle>
+                <FaBriefcase /> Software Developer
+              </ExperienceTitle>
+              <ExperienceCompany>Frontier Institute of Ophthalmology (FIO) Eye Hospital, Islamabad</ExperienceCompany>
+            </ExperienceInfo>
+            <DateBadge>Aug 2026 – Present</DateBadge>
+          </ExperienceHeader>
+
+          <BulletList>
+            <BulletItem>
+              Developed an enterprise Finance system (General Ledger, journal vouchers, budgeting, cash & bank, fiscal periods) in C#, ASP.NET Core Web API, Entity Framework Core, Angular and SQL Server using Clean Architecture (Domain, Application, Infrastructure, API layers).
+            </BulletItem>
+            <BulletItem>
+              Built the Enterprise Change & Defect Management System end-to-end from a Level 3 SRS: Bug/Change Request lifecycles, multi-level approval workflows, RBAC with segregation of duties, secure file attachments, SLA tracking, release management and an immutable audit trail.
+            </BulletItem>
+            <BulletItem>
+              Developed HRMS modules (Document & Template Management, Grievance, Employee Benefits, Overtime, Leave) in .NET and Angular, enforcing 13 business policies through API-level validation and workflow rules.
+            </BulletItem>
+            <BulletItem>
+              Wrote and optimized T-SQL stored procedures, triggers and indexes; fixed slow queries and implemented optimistic concurrency (rowversion) to prevent lost updates.
+            </BulletItem>
+            <BulletItem>
+              Secured REST APIs with JWT authentication and permission-based authorization; added structured logging with Serilog and API documentation with Swagger.
+            </BulletItem>
+            <BulletItem>
+              Wrote xUnit unit and integration tests and Playwright E2E tests; led UAT with finance users and resolved defects across API, UI and database layers.
+            </BulletItem>
+          </BulletList>
+        </ExperienceCard>
+
+        <ExperienceCard
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <ExperienceHeader>

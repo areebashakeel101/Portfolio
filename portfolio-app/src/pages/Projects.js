@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaGithub, FaBrain, FaRobot, FaCode, FaMobile, FaLayerGroup } from 'react-icons/fa';
+import { FaGithub, FaBrain, FaRobot, FaCode, FaMobile, FaLayerGroup, FaVideo, FaExternalLinkAlt } from 'react-icons/fa';
 
 const gradientShift = keyframes`
   0%, 100% { background-position: 0% 50%; }
@@ -387,6 +387,22 @@ const Projects = () => {
       github: "https://github.com/areebashakeel101/Parkinsense-FYP"
     },
     {
+      title: "ClauClip",
+      subtitle: "AI-Powered Video Clipping SaaS",
+      badge: "SaaS Web App",
+      category: "web",
+      featured: true,
+      icon: <FaVideo />,
+      iconColor: "#f472b6",
+      gradient: "linear-gradient(90deg, #f472b6, #ec4899)",
+      description: [
+        "Production SaaS converting long YouTube videos into short clips: transcript extraction, AI highlight detection, clip generation and captioning",
+        "Built authentication, project dashboard, admin panel and subscription/credit-based billing"
+      ],
+      tech: ["Next.js", "OpenAI API", "FFmpeg", "Supabase", "Whop"],
+      live: "https://clauclip.app"
+    },
+    {
       title: "TravelGenie",
       subtitle: "AI-driven Travel Assistant",
       badge: "Full Stack Web App",
@@ -519,13 +535,13 @@ const Projects = () => {
 
                   <Links>
                     <LinkButton 
-                      href={project.github} 
+                      href={project.github || project.live} 
                       target="_blank" 
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <FaGithub /> View on GitHub
+                      {project.github ? <><FaGithub /> View on GitHub</> : <><FaExternalLinkAlt /> Visit Live Site</>}
                     </LinkButton>
                   </Links>
                 </ProjectContent>
